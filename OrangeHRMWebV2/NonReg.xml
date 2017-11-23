@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Non regression check">
-	<test name="Configuration">
-	    <classes>
-	        <class name="acial.selenium.test.Authentification"></class>
-	    </classes>
-	</test> 
-</suite>
