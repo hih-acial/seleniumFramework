@@ -6,13 +6,24 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class UIPage {
 	public WebDriver driver=null;
 	public String Name="";
 	public String Type="";
+	public String Uuid;
+
+	public UIPage () {
+		Uuid = UUID.randomUUID().toString();
+	}
+
 	public List<UIObject> UIObjects = new ArrayList<UIObject>();
-	
+	@Override
+	public String toString() {
+		return Name;
+	}
+
 	public UIObject GetBy(String guiObject) {
 		return (GetBy(guiObject, ""));
 	}
@@ -23,8 +34,8 @@ public class UIPage {
 			if ( UIObjects.get(i).Name.equals(guiObject) ) {
 				UIObject obj = UIObjects.get(i);
 				for (int j=0; j<5; j++) {
-					if (obj.Value[j].indexOf(":")>0) {
-						String[] parts = obj.Value[j].split(":");
+					if (obj.Values[j].indexOf(":")>0) {
+						String[] parts = obj.Values[j].split(":");
 						parts[1] = parts[1].replace("$1$", param);
 					    switch (parts[0]) {
 					    	case "id" :

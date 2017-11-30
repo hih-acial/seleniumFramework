@@ -16,40 +16,36 @@ import junitparams.Parameters;
 
 import static org.acial.SeFramework.Selenium.*;
 
-@RunWith(JUnitParamsRunner.class)
 @FixMethodOrder (MethodSorters.NAME_ASCENDING)
-public class Authentification {
-	public static Object[][] logins() {
-		return TestData.wrongCredentials;
-	}
-
+public class Menus {
 	@BeforeClass
 	public static void setUp() throws Exception {
 		Initialize();
+		OrangeHRMActions.login(TestData.adminLogin, TestData.adminPwd);
 	}
 	@AfterClass
 	public static void tearDown() throws Exception {
-        Destroy();
+		OrangeHRMActions.logout();
+		Destroy();
 	}
   
   
   @Test 
-  @Parameters(method = "logins")
-  public void aLoginKO(String login, String pwd) throws Exception {
-	  OrangeHRMActions.login (login, pwd);
-	  Page("Authentication").Element("Message").VerifyText (TestData.loginFailedMessage);
+  public void NavigationAdmin() throws Exception {
+	  Page("Menu").Element("Admin").Click();
+	  Page("Menu").Element("PIM").Click();
+	  Page("Menu").Element("Conge").Click();
+	  Page("Menu").Element("Heure").Click();
+	  Page("Menu").Element("Recruitment").Click();
+	  Page("Menu").Element("Performance").Click();
  }  
 
   @Test 
   public void bLoginOK() throws Exception {
-	  OrangeHRMActions.login (TestData.adminLogin, TestData.adminPwd);
-	  Page("Home").Element("WelcomeMenu").VerifyText (TestData.welcome);
   }
   
   @Test
   public void cLogout() throws Exception {
-	  OrangeHRMActions.logout();
   }
-
 
 }

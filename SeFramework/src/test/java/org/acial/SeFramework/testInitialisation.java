@@ -66,12 +66,22 @@ public class testInitialisation {
 	public void checkObject() {
 		UIPage p = Page("Authentication");
 		if (p!=null) {
-			UIObject e = p.UIObjects.get(0);
+			UIObject e = p.UIObjects.get(1);
 			assertNotNull(e);
-			assertEquals(e.Type, ("Champ"));
-			assertEquals(e.Name, ("Username"));
-			assertEquals(e.Value, ("id:txtUsername"));
+			assertEquals(e.Type, "Champ");
+			assertEquals(e.Name, "Username");
+			assertEquals(e.Values[0], "id:txtUsername");
 		}
 	}
-
+	@Test
+	public void loginLogout() throws Exception {
+		  Page("Authentication").Element("Username").WaitForElement();
+		  Page("Authentication").Element("Username").Set("admin");
+		  Page("Authentication").Element("Password").Set("test");
+		  Page("Authentication").Element("Login").Click();
+		  Page("Home").Element("WelcomeMenu").WaitForElement();
+		  Page("Dashbord").Element("DashbordMenu").Click();
+		  Page("Home").Element("WelcomeMenu").Click();
+		  Page("Home").Element("Logout").Click();
+	}
 }
