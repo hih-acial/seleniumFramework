@@ -15,10 +15,24 @@
   </properties>
 
   <dependencies>
+	<!-- https://mvnrepository.com/artifact/junit/junit -->
+	<dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>4.12</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/pl.pragmatists/JUnitParams -->
+	<dependency>
+	    <groupId>pl.pragmatists</groupId>
+	    <artifactId>JUnitParams</artifactId>
+	    <version>1.1.1</version>
+	</dependency>
+	
+
 	<dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
-        <version>3.7.1</version>
+        <version>3.13.0</version>
     </dependency>  
 
 	<dependency>
@@ -27,18 +41,6 @@
 		<version>1.2.17</version>
 	</dependency>
 
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-    </dependency>
-	<dependency>
-	    <groupId>pl.pragmatists</groupId>
-	    <artifactId>JUnitParams</artifactId>
-	    <version>1.1.1</version>
-	    <scope>test</scope>
-	</dependency>
 
 	<dependency>
 	    <groupId>org.apache.commons</groupId>

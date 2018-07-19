@@ -3,9 +3,16 @@
  */
 package org.acial.SeFramework;
 
-import static org.acial.SeFramework.Selenium.*;
+import static org.acial.SeFramework.Selenium.ScreenShot;
+import static org.acial.SeFramework.Selenium.continueOnError;
+import static org.acial.SeFramework.Selenium.driver;
+import static org.acial.SeFramework.Selenium.implicitWait;
+import static org.acial.SeFramework.Selenium.logger;
+import static org.acial.SeFramework.Selenium.screenShotOnAction;
+import static org.acial.SeFramework.Selenium.screenShotOnError;
+import static org.acial.SeFramework.Selenium.thinkTime;
+import static org.acial.SeFramework.Selenium.wait;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 import java.util.UUID;

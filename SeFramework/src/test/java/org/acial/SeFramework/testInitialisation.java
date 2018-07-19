@@ -14,7 +14,7 @@ import junitparams.Parameters;
 
 import static org.acial.SeFramework.Selenium.*;
 
-@RunWith(JUnitParamsRunner.class)
+//@RunWith(JUnitParamsRunner.class)
 public class testInitialisation {
 
 	  private Object[] pages() {

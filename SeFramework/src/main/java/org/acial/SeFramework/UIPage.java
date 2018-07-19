@@ -29,7 +29,6 @@ public class UIPage {
 	}
 	public UIObject GetBy(String guiObject, String param) {
 		By by=null;
-		String image="";
 		for (int i=0;i<UIObjects.size();i++) {
 			if ( UIObjects.get(i).Name.equals(guiObject) ) {
 				UIObject obj = UIObjects.get(i);
